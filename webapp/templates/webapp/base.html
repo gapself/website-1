@@ -1,0 +1,110 @@
+<!--HEADER,MENU NAV, FOOTER !!! -->
+<!--<!DOCTYPE html>-->
+<!--{% load static %}-->
+<html lang="en">
+
+<head>
+    <title>{% block title %}Yummy{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'webapp/style.css' %}"/>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}" type = "text/css"/>
+    <link rel="stylesheet" href="{% static 'webapp/js/bootstrap.min.js' %}" type = "text/js"/>
+    <!--<link rel="stylesheet" href="{% static 'webapp/style.css' %}"/>-->
+    <!--<style-->
+    <!--to nam daje ikonki:-->
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--mobile websites-->
+    <!--<meta name="viewport" content = "width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type=”image” />
+
+</head>
+
+<body>
+<!--HEADER-->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<div class="container-fluid">
+    <a class ="navbar-brand" href="#"><img src="{% static 'webapp/img/logo.png' %}" ></a>
+    <button class ="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--ITEMS/ HAMBURGER-->
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <!--its unordered list; ml-auto, push off nav to the right hand side from the middle-->
+        <ul class="navbar-nav ml-auto">
+            <!--acive(status estate) w css sprawimy, że jak najedziemy na np Contact, to ściemnieje link-->
+            <li class="{% block home_active %}{% endblock %}">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="{% block about_active %}{% endblock %}">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="{% block blog_active %}{% endblock %}">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>
+<!--BODY-->
+<div>
+    {% block body %}
+    {% endblock %}
+</div>
+
+<!--Footer -->
+<footer>
+<div class="container-fluid padding">
+<div class="row text-center">
+    <div class="col-md-4">
+        <img src="{% static 'webapp/img/logo.png' %}">
+        <hr class="light">
+        <p>555-555-555</p>
+        <p>blabla@gmail.com</p>
+        <p>ul.Cebulowa 234</p>
+        <p>NYC,Polska,0000</p>
+    </div>
+    <div class="col-md-4">
+        <hr class="light">
+        <h5>Our hours</h5>
+        <hr class="light">
+        <p>Monday:4pm-5pm</p>
+        <p>Weekend:9pm-10pm</p>
+    </div>
+    <div class="col-md-4">
+        <hr class="light">
+        <h5>Service Area</h5>
+        <hr class="light">
+        <p>LALALALALLA</p>
+        <p>BLABLALBLA</p>
+    </div>
+    <!--to col-12 - wiersz po całej szerokości-->
+    <div class="col-12">
+        <hr class="light-100">
+        <h5>&copy; yummytummy@cebula.com</h5>
+    </div>
+
+</div>
+</div>
+</footer>
+
+
+
+
+
+
+    <!--to sprawia, że nam obrazki w karuzeli się przewijają:-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!--to nam rozwija nav bar-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

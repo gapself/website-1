@@ -1,0 +1,9 @@
+.idea
+*.pyc
+*~
+__pycache__
+myvenv
+db.sqlite3
+webapp/static/webapp/js
+/static
+.DS_Store
