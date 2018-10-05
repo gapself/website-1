@@ -2,9 +2,10 @@ from django.db import models
 from django.utils import timezone
 
 class Post(models.Model):
-    author =models.ForeignKey('auth.User', on_delete=models.CASCADE) #odnośnik do innego modelu
     title = models.CharField(max_length=200)
+    photo = models.FileField()
     text = models.TextField()
+    author =models.ForeignKey('auth.User', on_delete=models.CASCADE) #odnośnik do innego modelu
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 

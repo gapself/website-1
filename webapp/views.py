@@ -12,3 +12,4 @@ def insights(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request,'webapp/insights.html',{'posts':posts})
 # def post_list(request):
+# def post_new(request):
