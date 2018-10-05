@@ -1,0 +1,16 @@
+{% extends 'webapp/base.html' %}
+{% block title %}Insights{% endblock %}
+{% block insights_active %}active{% endblock %}
+{% block body %}
+{% load static %}
+
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                <p>{{ post.published_date }}</p>
+            </div>
+            <h1><a href="% url 'insights' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
