@@ -6,6 +6,21 @@ html, body {
     font-family: 'Poppins',sans-serif;
     color: #222;
 }
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.post {
+    margin-left: 70px;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #E06CF5;
+}
+
 .navbar{
     padding: .8rem;
 }

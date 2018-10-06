@@ -3,7 +3,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    photo = models.FileField()
+    photo = models.FileField(upload_to='media/')
     text = models.TextField()
     author =models.ForeignKey('auth.User', on_delete=models.CASCADE) #odnośnik do innego modelu
     created_date = models.DateTimeField(default=timezone.now)
