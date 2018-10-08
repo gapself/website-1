@@ -9,16 +9,16 @@
         <!--<div class="post">-->
         <div class="container">
             {% if post.photo %}
-                <img src="{{ post.photo.url }}" class="img-fluid" alt="Responsive image">
+            <div class="background img-fluid" style="background-image: url({{ post.photo.url }})" alt="Responsive image"></div>
             {% endif %}
             <div class="centered">
-                <a href="{% url 'insights_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                <a href="{% url 'insights_detail' pk=post.pk %}">{{ post.title }}</a>
             </div>
-        <!--</div>-->
+    <!--</div>-->
             <div class="date">
                 <p>{{ post.published_date }}</p>
             </div>
-                <p>{{ post|linebreaksbr }}</p>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
 {% endblock %}
